@@ -198,3 +198,7 @@ El vector de características unificado y ponderado (resultante de la fusión) s
 [7] Singh, J., & Kaur, A. (2023). Gated Fusion Network: A Novel Approach for Multi-Modal Feature Integration.
 
 ---
+
+## 6. Diapositiva:
+
+![Link Diapo](https://docs.google.com/presentation/d/1EIzhDH3TFAZv92r-HbQAbuAbOyTEWYWS/edit?slide=id.p5#slide=id.p5)
