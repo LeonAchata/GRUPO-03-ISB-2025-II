@@ -25,8 +25,6 @@
 
 ## 1. Introducción al Transformer
 
-![Arquitectura Transformer](https://miro.medium.com/v2/resize:fit:1400/1*BHzGVskWGS_3jEcYYi6miQ.png)
-
 El Transformer es una arquitectura de red neuronal introducida en 2017 por Vaswani et al. en su paper seminal "Attention Is All You Need" [1]. Su característica definitoria es que prescinde completamente de las redes neuronales recurrentes (RNNs) y las redes neuronales convolucionales (CNNs), apoyándose exclusivamente en un mecanismo llamado **Autotensión (Self-Attention)**.
 
 ---
