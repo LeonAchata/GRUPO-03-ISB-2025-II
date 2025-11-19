@@ -41,7 +41,7 @@ La autotensión permite que el modelo pese la importancia de cada elemento de la
 
 #### Mecanismo de Consulta-Clave-Valor (Q-K-V)
 
-![Diagrama Q-K-V](https://miro.medium.com/v2/resize:fit:1400/1*_92bnsMJy8Bl539G4v93yg.png)
+![Diagrama Q-K-V](https://upload.wikimedia.org/wikipedia/commons/f/ff/Attn-xy-qkv.png)
 
 Para cada token de entrada, se calculan tres vectores:
 
@@ -86,13 +86,9 @@ Dado que el mecanismo de autotensión procesa toda la secuencia simultáneamente
 
 **Título del Paper**: "Transformer-based Model for ECG Signal Classification" (Wang et al., 2021) [3]
 
-![Señal EKG con anotaciones](https://www.researchgate.net/publication/336890910/figure/fig1/AS:819466307956736@1572379784256/ECG-waveform-and-its-characteristics.png)
-
 Este estudio se centra en utilizar una arquitectura Transformer para la clasificación de arritmias a partir de señales de EKG, un desafío que requiere capturar patrones tanto locales (ondas P, QRS) como dependencias a largo plazo (ritmo general).
 
 ### 3.1 Preprocesamiento y Entrada de Datos (Tokenización del EKG)
-
-![Encoder aplicado a bloques de señal](https://www.researchgate.net/publication/353282447/figure/fig2/AS:1046233749008384@1626767155154/ECG-signal-segmentation-and-tokenization-for-Transformer-input.png)
 
 - **Dataset**: Se utilizó un conjunto de datos grande de EKG (p. ej., derivado de PhysioNet o bases de datos clínicas privadas) que contiene registros etiquetados con diversas arritmias (Normal, Fibrilación Auricular, Taquicardia, etc.).
 
@@ -114,8 +110,6 @@ Este estudio se centra en utilizar una arquitectura Transformer para la clasific
 
 ### 3.3 Metodología de Entrenamiento
 
-![Curva de entrenamiento](https://www.researchgate.net/publication/344169810/figure/fig3/AS:934754821750784@1599833516456/Training-and-validation-loss-curves-for-ECG-classification-model.png)
-
 - **Pérdida (Loss Function)**: Se empleó una función de pérdida de entropía cruzada ponderada para manejar el desequilibrio de clases, ya que las arritmias raras son menos comunes que el ritmo normal [4]
 
 - **Optimización**: Se utilizó el optimizador Adam con una programación de tasa de aprendizaje que disminuye después de alcanzar un pico inicial (estrategia común en los Transformers) [3]
@@ -123,8 +117,6 @@ Este estudio se centra en utilizar una arquitectura Transformer para la clasific
 - **Evaluación**: El rendimiento se evaluó utilizando métricas específicas para el desequilibrio de datos, como el F1-Score macro y el Área bajo la curva ROC (AUC)
 
 ### 3.4 Resultados Clave
-
-![Curva ROC](https://www.researchgate.net/publication/342628687/figure/fig4/AS:909186425303041@1593610268551/ROC-curves-for-ECG-arrhythmia-classification-using-Transformer-model.png)
 
 - El modelo basado en Transformer superó consistentemente a las arquitecturas previas basadas en CNN y RNN en métricas clave, especialmente en la clasificación de arritmias con patrones de largo alcance (ej. Fibrilación Auricular) [3]
 
@@ -208,6 +200,3 @@ El vector de características unificado y ponderado (resultante de la fusión) s
 [7] Singh, J., & Kaur, A. (2023). Gated Fusion Network: A Novel Approach for Multi-Modal Feature Integration.
 
 ---
-
-**Documento generado**: Noviembre 2025  
-**Tema**: Aplicación de Transformers en Análisis de Señales de Electrocardiograma (EKG)
