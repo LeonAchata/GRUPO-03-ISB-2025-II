@@ -20,7 +20,7 @@
    - 4.4 [Clasificación Final](#44-clasificación-final)
    - 4.5 [Resultados y Ventajas](#45-resultados-y-ventajas)
 5. [Referencias](#5-referencias)
-
+6. [Diapositivas](#6-diapositivas)
 ---
 
 ## 1. Introducción al Transformer
@@ -201,4 +201,4 @@ El vector de características unificado y ponderado (resultante de la fusión) s
 
 ## 6. Diapositiva:
 
-![Link Diapo](https://docs.google.com/presentation/d/1EIzhDH3TFAZv92r-HbQAbuAbOyTEWYWS/edit?slide=id.p5#slide=id.p5)
+[Link Diapo](https://docs.google.com/presentation/d/1EIzhDH3TFAZv92r-HbQAbuAbOyTEWYWS/edit?slide=id.p5#slide=id.p5)
