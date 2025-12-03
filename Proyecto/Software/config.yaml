@@ -1,0 +1,113 @@
+# Configuration file for EEG-BCI Motor Imagery Project
+
+# Data paths
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed/segmented"
+  annotations_path: "data/annotations"
+  
+# Experiment configuration
+experiment:
+  name: "motor_imagery_classification"
+  seed: 42
+  
+# Subject and run selection
+subjects:
+  # Focus on subjects with complete data
+  selected: ["S001", "S002", "S003", "S004", "S005"]
+  # Runs with motor imagery tasks (imagined movements)
+  runs_of_interest: ["R04", "R06", "R08", "R10", "R12", "R14"]
+  
+# EEG parameters
+eeg:
+  sampling_rate: 160  # Hz
+  n_channels: 64
+  # Motor cortex channels (prioritize these)
+  motor_channels: ["C3", "C4", "Cz", "FC3", "FC4", "CP3", "CP4", "C1", "C2", "C5", "C6"]
+  
+# Preprocessing parameters
+preprocessing:
+  # Bandpass filter (mu and beta bands for motor imagery)
+  bandpass:
+    low: 8.0   # Hz
+    high: 30.0  # Hz
+  # Notch filter for powerline noise
+  notch:
+    freq: 60.0  # Hz (use 50.0 for Europe)
+  # Artifact rejection
+  artifact_threshold: 250  # microvolts
+  # Epoching
+  epoch:
+    tmin: -0.5  # seconds before event
+    tmax: 4.0   # seconds after event
+    baseline: [-0.5, 0.0]  # baseline correction window
+    
+# Event codes (from dataset)
+events:
+  T0: 0  # Rest
+  T1: 1  # Left fist (R04,R08,R12) or Both fists (R06,R10,R14)
+  T2: 2  # Right fist (R04,R08,R12) or Both feet (R06,R10,R14)
+  
+# Class labels
+classes:
+  # For runs R04, R08, R12
+  hand_runs:
+    - "left_hand"
+    - "right_hand"
+  # For runs R06, R10, R14
+  fist_feet_runs:
+    - "both_hands"
+    - "both_feet"
+  # Combined 4-class problem
+  all_classes:
+    - "left_hand"
+    - "right_hand"
+    - "both_hands"
+    - "both_feet"
+    
+# Feature extraction
+features:
+  # Common Spatial Patterns
+  csp:
+    n_components: 6
+  # Power Spectral Density
+  psd:
+    method: "welch"
+    fmin: 8.0
+    fmax: 30.0
+    
+# Model parameters
+models:
+  # Linear Discriminant Analysis (baseline)
+  lda:
+    solver: "svd"
+  # Support Vector Machine
+  svm:
+    kernel: "rbf"
+    C: 1.0
+    gamma: "scale"
+  # Random Forest
+  rf:
+    n_estimators: 100
+    max_depth: 10
+    
+# Validation strategy
+validation:
+  # Leave-One-Run-Out for intra-subject
+  method: "loro"  # Options: "loro", "kfold", "loso"
+  n_folds: 5  # For k-fold
+  
+# Metrics
+metrics:
+  - "accuracy"
+  - "precision"
+  - "recall"
+  - "f1_score"
+  - "confusion_matrix"
+  
+# Output paths
+output:
+  models: "models"
+  experiments: "experiments"
+  reports: "reports"
+  figures: "reports/figures"

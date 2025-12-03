@@ -1,0 +1,10 @@
+ANÁLISIS ESTADÍSTICO - Motor Imagery Classification
+======================================================================
+
+
+Manos (Izq/Der)
+----------------------------------------------------------------------
+
+Friedman Test (diferencias entre modelos):
+  Estadístico: 1.7586
+  P-value: 0.6240
