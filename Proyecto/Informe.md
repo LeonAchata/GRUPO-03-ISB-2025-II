@@ -138,7 +138,7 @@ raw.notch_filter(freqs=[60.0], method='fir')  # Eliminación de ruido de línea
 
 **Justificación:** La banda mu se desincroniza durante imaginación motora (Event-Related Desynchronization, ERD), mientras que beta presenta sincronización post-movimiento (Event-Related Synchronization, ERS) [12].
 
-![Comparación de Filtrado](Proyecto/Software/reports/figures/02_filtering_comparison.png)
+![Comparación de Filtrado](/Proyecto/Software/reports/figures/02_filtering_comparison.png)
 *Figura 1: Efecto del filtrado pasa-banda en señales EEG. Superior: señal cruda, inferior: señal filtrada 8-30 Hz.*
 
 #### Remoción de Artefactos
@@ -151,7 +151,7 @@ ica.fit(raw)
 # Remoción automática de componentes de artefacto
 ```
 
-![Remoción de Artefactos](Proyecto/Software/reports/figures/02_artifact_removal.png)
+![Remoción de Artefactos](/Proyecto/Software/reports/figures/02_artifact_removal.png)
 *Figura 2: Identificación y remoción de componentes de artefacto mediante ICA.*
 
 #### Segmentación y Normalización
@@ -160,7 +160,7 @@ ica.fit(raw)
 - **Baseline:** Corrección usando 500ms pre-estímulo
 - **Normalización:** Z-score por canal para estandarizar amplitudes entre sujetos
 
-![Épocas Promediadas](Proyecto/Software/reports/figures/02_averaged_epochs.png)
+![Épocas Promediadas](/Proyecto/Software/reports/figures/02_averaged_epochs.png)
 *Figura 3: Épocas promediadas por clase mostrando patrones distintivos de imaginación motora.*
 
 ### 5.3 Extracción de Características
@@ -297,10 +297,10 @@ Se entrenaron **4 modelos** para cada una de las **2 tareas binarias** (total: 8
 | SVM-Linear | 61.63% | 61.55% | 61.63% | 61.55% | 0.233 |
 | Random Forest | 60.10% | 60.09% | 60.10% | 60.09% | 0.202 |
 
-![Matrices de Confusión - Manos](Proyecto/Software/reports/figures/confusion_matrices_hands.png)
+![Matrices de Confusión - Manos](/Proyecto/Software/reports/figures/confusion_matrices_hands.png)
 *Figura 4: Matrices de confusión normalizadas para clasificación de manos (Izq vs Der). SVM-RBF muestra mejor balance entre clases.*
 
-![Matrices de Confusión - Puños/Pies](Proyecto/Software/reports/figures/confusion_matrices_fists_feet.png)
+![Matrices de Confusión - Puños/Pies](/Proyecto/Software/reports/figures/confusion_matrices_fists_feet.png)
 *Figura 5: Matrices de confusión normalizadas para clasificación puños/pies (Ambas Manos vs Ambos Pies).*
 
 **Observaciones clave:**
@@ -310,10 +310,10 @@ Se entrenaron **4 modelos** para cada una de las **2 tareas binarias** (total: 8
 3. Random Forest fue ligeramente inferior pero aún competitivo (~60%)
 4. **Cohen's Kappa >0.2** indica acuerdo sustancial más allá del azar en todos los modelos
 
-![Comparación de Modelos](Proyecto/Software/reports/figures/model_comparison.png)
+![Comparación de Modelos](/Proyecto/Software/reports/figures/model_comparison.png)
 *Figura 6: Comparación de métricas entre modelos. SVM-RBF consistentemente superior en ambas tareas.*
 
-![Variabilidad por Fold](Proyecto/Software/reports/figures/fold_variability.png)
+![Variabilidad por Fold](/Proyecto/Software/reports/figures/fold_variability.png)
 *Figura 7: Variabilidad del accuracy a través de los 6 folds LORO. La estabilidad indica robustez temporal.*
 
 ### 6.3 Modelo Multi-Clase
@@ -327,16 +327,16 @@ Se entrenó un **modelo unificado de 4 clases** (Mano Izq, Mano Der, Ambas Manos
 | SVM-Linear | 36.89% | 36.75% | 36.83% | 36.64% | 0.159 |
 | Random Forest | 25.78% | 25.05% | 25.73% | 25.11% | 0.010 |
 
-![Matrices de Confusión 4 Clases](Proyecto/Software/reports/figures/fig1_confusion_matrices_4class.png)
+![Matrices de Confusión 4 Clases](/Proyecto/Software/reports/figures/fig1_confusion_matrices_4class.png)
 *Figura 8: Matrices de confusión para modelo de 4 clases. LDA muestra mejor distribución, aunque accuracy es menor que modelos binarios.*
 
-![Comparación Modelos 4 Clases](Proyecto/Software/reports/figures/fig2_model_comparison_4class.png)
+![Comparación Modelos 4 Clases](/Proyecto/Software/reports/figures/fig2_model_comparison_4class.png)
 *Figura 9: Comparación de métricas en modelo multi-clase. Mayor dificultad evidente vs clasificación binaria.*
 
-![Variabilidad 4 Clases](Proyecto/Software/reports/figures/fig3_fold_variability_4class.png)
+![Variabilidad 4 Clases](/Proyecto/Software/reports/figures/fig3_fold_variability_4class.png)
 *Figura 10: Variabilidad por fold en modelo de 4 clases. Mayor inestabilidad refleja complejidad del problema.*
 
-![Tabla Resultados 4 Clases](Proyecto/Software/reports/figures/fig4_results_table_4class.png)
+![Tabla Resultados 4 Clases](/Proyecto/Software/reports/figures/fig4_results_table_4class.png)
 *Figura 11: Tabla resumen de resultados para modelo multi-clase.*
 
 **Observaciones clave:**
@@ -457,50 +457,7 @@ Este proyecto demuestra la viabilidad de sistemas BCI basados en Machine Learnin
 
 [17] Ang, K.K., Chin, Z.Y., Wang, C., Guan, C., Zhang, H. (2012). "Filter bank common spatial pattern algorithm on BCI competition IV datasets 2a and 2b." *Frontiers in Neuroscience*, 6, 39.
 
----
-
-## Biografías de Autores
-
-### [Tu Nombre Completo]
-**Estudiante de Ingeniería [Tu especialidad] - Pontificia Universidad Católica del Perú**
-
-[Breve biografía de 3-4 líneas sobre ti, tu área de interés en ingeniería biomédica, experiencia relevante en procesamiento de señales o machine learning, y objetivos profesionales. Ejemplo:]
-
-Estudiante de último ciclo de Ingeniería Electrónica en la PUCP con especialización en procesamiento de señales biomédicas. Interesado en aplicaciones de Machine Learning e Inteligencia Artificial en sistemas de salud y neurorrehabilitación. Ha participado en proyectos de análisis de señales ECG, EMG y EEG durante el curso de Introducción a Señales Biomédicas. Aspira a desarrollar tecnologías BCI de bajo costo para mejorar la calidad de vida de personas con discapacidades motoras.
-
-**Contacto:** [tu.email@pucp.edu.pe] | **GitHub:** [tu-usuario]
-
----
-
-### [Nombre Compañero/a 2] (si aplica)
-**Estudiante de Ingeniería [Especialidad] - Pontificia Universidad Católica del Perú**
-
-[Biografía similar del segundo integrante]
-
----
-
-### [Nombre Compañero/a 3] (si aplica)
-**Estudiante de Ingeniería [Especialidad] - Pontificia Universidad Católica del Perú**
-
-[Biografía similar del tercer integrante]
-
----
-
-**Agradecimientos**
-
-Los autores agradecen al Prof. [Nombre del profesor] y al equipo docente del curso Introducción a Señales Biomédicas (ISB) de la PUCP por su guía y apoyo durante el desarrollo de este proyecto. Asimismo, se agradece a PhysioNet por proporcionar acceso abierto al EEG Motor Movement/Imagery Database utilizado en este estudio.
-
----
-
-**Disponibilidad de Código y Datos**
-
-El código completo de este proyecto está disponible bajo licencia MIT en:  
-🔗 **GitHub:** [https://github.com/[tu-usuario]/Proyecto-ISB](https://github.com/[tu-usuario]/Proyecto-ISB)
-
-El dataset utilizado es de acceso público en:  
-🔗 **PhysioNet:** [https://physionet.org/content/eegmmidb/1.0.0/](https://physionet.org/content/eegmmidb/1.0.0/)
-
----
+------
 
 *Documento generado como parte del Proyecto Final del curso Introducción a Señales Biomédicas*  
-*Pontificia Universidad Católica del Perú - 2025*
+*Universidad Peruana Cayetano Heredia - 2025*
