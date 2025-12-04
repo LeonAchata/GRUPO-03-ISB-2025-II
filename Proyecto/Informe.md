@@ -1,7 +1,7 @@
 # Sistema BCI para Clasificación de Imaginación Motora mediante EEG y Machine Learning
 
 **Proyecto de Interfaz Cerebro-Computadora**  
-*Pontificia Universidad Católica del Perú - Curso de Introducción a Señales Biomédicas*
+*Universidad Peruana Cayetano Heredia - Curso de Introducción a Señales Biomédicas*
 
 ---
 
